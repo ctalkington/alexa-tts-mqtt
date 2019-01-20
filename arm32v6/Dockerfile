@@ -1,7 +1,7 @@
 FROM arm32v6/python:3.6-alpine
 
 COPY ./ha-alexa-tts /ha-alexa-tts
-COPY alexa-tts-mqtt.py /
+COPY ./alexa-tts-mqtt.py /
 
 RUN apk add curl jq
 
