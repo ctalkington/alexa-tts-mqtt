@@ -1,14 +1,10 @@
-FROM balenalib/armv6-alpine-python:3.6
+FROM arm32v6/python:3.6-alpine
 
 COPY ./ha-alexa-tts /ha-alexa-tts
 COPY ./alexa-tts-mqtt.py /
-
-RUN [ "cross-build-start" ]
 
 RUN apk add curl jq
 
 RUN pip install paho-mqtt
 
 CMD [ "python", "/alexa-tts-mqtt.py" ]
-
-RUN [ "cross-build-end" ]
